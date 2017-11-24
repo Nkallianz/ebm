@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <meta charset="utf-8" />
-    <title>Lojinha Dev</title>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Easy Business Manager</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.css">
@@ -10,99 +11,136 @@
 
     <!-- Electron Javascript -->
     <!--<script src="app.js" charset="utf-8"></script>-->
-  </head>
+</head>
 
-  <body>
+<body>
     <h1>TItulo</h1>
-      <div class="window">
-          <header class="toolbar toolbar-header">
-              <h1 class="title">Lojinha DEV</h1>
-            
-              <div class="toolbar-actions">
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <h1 class="title">Estoque</h1>
+
+            <div class="toolbar-actions">
                 <div class="btn-group">
-                  <button class="btn btn-default">
+                    <button class="btn btn-default" title="Início">
+                   <a href="home" >
                     <span class="icon icon-home"></span>
+                  </a>
                   </button>
-                  <button class="btn btn-default">
+                    <button class="btn btn-default" title="Formulação de Receita">
+                        <span class="icon icon-list-add"></span>
+                  </button>
+                    <button class="btn btn-default" title="Consultar Estoque">
+                        <span class="icon icon-list"></span>
+                  </button>
+                    <button class="btn btn-default" title="Registros">
                     <span class="icon icon-folder"></span>
                   </button>
-                  <button class="btn btn-default active">
-                    <span class="icon icon-cloud"></span>
-                  </button>
-                  <button class="btn btn-default">
-                    <span class="icon icon-popup"></span>
-                  </button>
-                  <button class="btn btn-default">
-                    <span class="icon icon-shuffle"></span>
+                    <button class="btn btn-default" title="Baixa de Estoque">
+                    <span class="icon icon-download"></span>
                   </button>
                 </div>
-            
-                <button type="button" @click="createClient()" class="btn btn-default" >
+
+                <button type="button" @click="createClient()" class="btn btn-default">
                     <span class="icon icon-user icon-text"></span>
                     Novo Cliente
                   </button>
-            
-                <button class="btn btn-default btn-dropdown pull-right">
-                  <span class="icon icon-megaphone"></span>
+
+                <button class="btn btn-default pull-right" title="Imprimir Estoque">
+                  <span class="icon icon-print"></span>
                 </button>
-              </div>
-            </header>
-          <div class="window-content">
+                <button class="btn btn-default pull-right">
+                    <span class="icon icon-lock"></span>
+                  </button>
+                <button class="btn btn-default pull-right">
+                      <span class="icon icon-lock-open"></span>
+                    </button>
+            </div>
+        </header>
+        <div class="window-content" id="App">
             <div class="pane-group">
-              <div class="pane sidebar">Lorem ipsumPerspiciatis repudiandae neque hic non. 
-                Omnis earum beatae dolore et. Quia molestiae doloremque. 
-                Beatae deserunt et sint unde et aut sit autem fuga. 
-                Ut consequuntur autem amet.
+                <div class="pane-sm sidebar">Lorem ipsumPerspiciatis repudiandae neque hic non. Omnis earum beatae dolore et. Quia molestiae doloremque. Beatae deserunt et sint unde et aut sit autem fuga. Ut consequuntur autem amet.
                 </div>
-              <div class="pane">
-               <table class="table table-striped">
-                 <thead>
-                   <tr>
-                     <th>Nome</th>
-                     <th>CPF</th>
-                     <th>Telefone</th>
-                     <th></th>
-                   </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="cliente in clientes">
-                      <td>{{cliente.name}}</td>
-                      <td>{{cliente.cpf}}</td>
-                      <td>{{cliente.fone}}</td>
-                      <td><button class="btn btn-default" @click="editClient(cliente)">
-                          <span class="icon icon-pencil"></span>
-                        </button></td>
-                    </tr>
-                    </tbody>
-               </table>
-            </div>
-            </div>
-          </div>
-          <footer class="toolbar toolbar-footer">
-              <h1 class="title">Desenvolvido por: Mim</h1>
-            </footer>
-        </div>
+                <div class="pane">
+                    <div class="tab-group">
+                        <div class="tab-item">
+                            <span class="icon icon-cancel icon-close-tab"></span> Aba 1
+                        </div>
+                        <div class="tab-item active">
+                            <span class="icon icon-cancel icon-close-tab"></span> Aba 2
+                        </div>
+                        <div class="tab-item">
+                            <span class="icon icon-cancel icon-close-tab"></span> Aba 3
+                        </div>
+                        <div class="tab-item tab-item-fixed">
+                            <span class="icon icon-plus"></span>
+                        </div>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Lote</th>
 
-        <div id="modal" v-if="openModal">
-          <div class="wrap">
-            <form id="cadastro-cliente" action="" class="pane-body">
-                <h3 v-if="mode=='cadastrar'">Cadastrar cliente</h3>
-              <h3 v-if="mode=='editar'">Editar cliente</h3>
-                <div class="form-group">
-                  <input type="text" class="form-control" id="name" v-model="client.name" placeholder="Nome"/>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="cpf"  v-model="client.cpf" placeholder="CPF"/>
-                </div>
-                  <div class="form-group">
-                      <input type="text" class="form-control" id="fone" v-model="client.fone" placeholder="Telefone"/>
-                  </div>
-                  <button class="btn btn-positive" id="save" @click="clientStoreOrUpdate">Salvar</button>
-                  <button type="button" class="btn btn-negative" @click="openModal=false">Cancelar</button>
-              </form>
-          </div>
-        </div>
+                                <th>Data</th>
+                                <th>Quantidade</th>
+                                <th>Contagem</th>
+                                <th>Data</th>
+                                <th>Viabilidade</th>
+                                <th>Data</th>
+                                <th>Cont. Corrigida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <th>J1 <span class="icon icon-plus-circled"></span></th>
+                            <tr v-for="produto in produtos">
 
-  </body>
-  <script src="brain.js" charset="utf-8"></script>
+                                <td>{{produto.lote}}
+                                    <a href="#" @click="editProduct(produto)">
+                                        <span class="icon icon-pencil"></span>
+                                    </a>
+                                </td>
+
+                                <td>{{produto.dataLote}}</td>
+                                <td>{{produto.quantidade}}</td>
+                                <td>{{produto.contagem}}</td>
+                                <td>{{produto.dataContagem}}</td>
+                                <td>{{produto.viabilidade}}</td>
+                                <td>{{produto.dataViabilidade}}</td>
+                                <td>{{produto.contagemCorrigida}}</td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer class="toolbar toolbar-footer">
+            <h1 class="title">Desenvolvido por: Mim</h1>
+        </footer>
+    </div>
+
+    <div id="modal" v-if="openModal">
+        <div class="wrap">
+            <form id="cadastro-produto" action="" class="pane-body">
+                <h3 v-if="mode=='cadastrar'">Cadastrar produto</h3>
+                <h3 v-if="mode=='editar'">Editar produto</h3>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" v-model="produto.name" placeholder="Nome" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="cpf" v-model="produto.cpf" placeholder="CPF" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="fone" v-model="produto.fone" placeholder="Telefone" />
+                </div>
+                <button class="btn btn-positive" id="save" @click="clientStoreOrUpdate">Salvar</button>
+                <button type="button" class="btn btn-negative" @click="openModal=false">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script src="brain.js" charset="utf-8"></script>
+<script src="pages/routes.js" charset="utf-8"></script>
+
 </html>
