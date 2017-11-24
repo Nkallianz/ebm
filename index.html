@@ -1,19 +1,108 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+  <meta charset="utf-8" />
+    <title>Lojinha Dev</title>
 
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/photon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Electron Javascript -->
+    <!--<script src="app.js" charset="utf-8"></script>-->
+  </head>
+
+  <body>
+    <h1>TItulo</h1>
+      <div class="window">
+          <header class="toolbar toolbar-header">
+              <h1 class="title">Lojinha DEV</h1>
+            
+              <div class="toolbar-actions">
+                <div class="btn-group">
+                  <button class="btn btn-default">
+                    <span class="icon icon-home"></span>
+                  </button>
+                  <button class="btn btn-default">
+                    <span class="icon icon-folder"></span>
+                  </button>
+                  <button class="btn btn-default active">
+                    <span class="icon icon-cloud"></span>
+                  </button>
+                  <button class="btn btn-default">
+                    <span class="icon icon-popup"></span>
+                  </button>
+                  <button class="btn btn-default">
+                    <span class="icon icon-shuffle"></span>
+                  </button>
+                </div>
+            
+                <button type="button" @click="createClient()" class="btn btn-default" >
+                    <span class="icon icon-user icon-text"></span>
+                    Novo Cliente
+                  </button>
+            
+                <button class="btn btn-default btn-dropdown pull-right">
+                  <span class="icon icon-megaphone"></span>
+                </button>
+              </div>
+            </header>
+          <div class="window-content">
+            <div class="pane-group">
+              <div class="pane sidebar">Lorem ipsumPerspiciatis repudiandae neque hic non. 
+                Omnis earum beatae dolore et. Quia molestiae doloremque. 
+                Beatae deserunt et sint unde et aut sit autem fuga. 
+                Ut consequuntur autem amet.
+                </div>
+              <div class="pane">
+               <table class="table table-striped">
+                 <thead>
+                   <tr>
+                     <th>Nome</th>
+                     <th>CPF</th>
+                     <th>Telefone</th>
+                     <th></th>
+                   </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="cliente in clientes">
+                      <td>{{cliente.name}}</td>
+                      <td>{{cliente.cpf}}</td>
+                      <td>{{cliente.fone}}</td>
+                      <td><button class="btn btn-default" @click="editClient(cliente)">
+                          <span class="icon icon-pencil"></span>
+                        </button></td>
+                    </tr>
+                    </tbody>
+               </table>
+            </div>
+            </div>
+          </div>
+          <footer class="toolbar toolbar-footer">
+              <h1 class="title">Desenvolvido por: Mim</h1>
+            </footer>
+        </div>
+
+        <div id="modal" v-if="openModal">
+          <div class="wrap">
+            <form id="cadastro-cliente" action="" class="pane-body">
+                <h3 v-if="mode=='cadastrar'">Cadastrar cliente</h3>
+              <h3 v-if="mode=='editar'">Editar cliente</h3>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name" v-model="client.name" placeholder="Nome"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="cpf"  v-model="client.cpf" placeholder="CPF"/>
+                </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" id="fone" v-model="client.fone" placeholder="Telefone"/>
+                  </div>
+                  <button class="btn btn-positive" id="save" @click="clientStoreOrUpdate">Salvar</button>
+                  <button type="button" class="btn btn-negative" @click="openModal=false">Cancelar</button>
+              </form>
+          </div>
+        </div>
+
   </body>
+  <script src="brain.js" charset="utf-8"></script>
 </html>
