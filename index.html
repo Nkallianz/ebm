@@ -29,7 +29,7 @@
                     <button class="btn btn-default" title="Formulação de Receita">
                         <span class="icon icon-list-add"></span>
                   </button>
-                    <button class="btn btn-default" title="Consultar Estoque">
+                    <button class="btn btn-default active" title="Consultar Estoque">
                         <span class="icon icon-list"></span>
                   </button>
                     <button class="btn btn-default" title="Registros">
@@ -40,7 +40,7 @@
                   </button>
                 </div>
 
-                <button type="button" @click="createClient()" class="btn btn-default">
+                <button type="button" @click="createProduct()" class="btn btn-default">
                     <span class="icon icon-user icon-text"></span>
                     Novo Cliente
                   </button>
@@ -48,17 +48,23 @@
                 <button class="btn btn-default pull-right" title="Imprimir Estoque">
                   <span class="icon icon-print"></span>
                 </button>
-                <button class="btn btn-default pull-right">
-                    <span class="icon icon-lock"></span>
-                  </button>
-                <button class="btn btn-default pull-right">
-                      <span class="icon icon-lock-open"></span>
-                    </button>
             </div>
         </header>
         <div class="window-content" id="App">
             <div class="pane-group">
-                <div class="pane-sm sidebar">Lorem ipsumPerspiciatis repudiandae neque hic non. Omnis earum beatae dolore et. Quia molestiae doloremque. Beatae deserunt et sint unde et aut sit autem fuga. Ut consequuntur autem amet.
+                <div class="pane-sm sidebar">
+                    <h3>Histórico</h3>
+                    <p>
+                        Em:24/11 <br /> Quantidade: 10 <br />Lote de Receita:1000
+
+                    </p>
+                    <p>
+                        Em:23/11 <br /> Quantidade: 5 <br />Lote de Receita:99
+
+                    </p>
+
+
+
                 </div>
                 <div class="pane">
                     <div class="tab-group">
@@ -122,18 +128,33 @@
     <div id="modal" v-if="openModal">
         <div class="wrap">
             <form id="cadastro-produto" action="" class="pane-body">
-                <h3 v-if="mode=='cadastrar'">Cadastrar produto</h3>
-                <h3 v-if="mode=='editar'">Editar produto</h3>
+                <h3 v-if="mode=='cadastrar'">Cadastrar Produto</h3>
+                <h3 v-if="mode=='editar'">Editar Produto</h3>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" v-model="produto.name" placeholder="Nome" />
+                    <input type="text" class="form-control" id="lote" v-model="product.lote" placeholder="Lote" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="cpf" v-model="produto.cpf" placeholder="CPF" />
+                    <input type="text" class="form-control" id="dataLote" v-model="product.dataLote" placeholder="Data do Lote" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="fone" v-model="produto.fone" placeholder="Telefone" />
+                    <input type="text" class="form-control" id="quantidade" v-model="product.quantidade" placeholder="Quantidade" />
                 </div>
-                <button class="btn btn-positive" id="save" @click="clientStoreOrUpdate">Salvar</button>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="contagem" v-model="product.contagem" placeholder="Contagem" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="dataContagem" v-model="product.dataContagem" placeholder="Data da Contagem" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="viabilidade" v-model="product.viabilidade" placeholder="Viabilidade" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="dataViabilidade" v-model="product.dataViabilidade" placeholder="Data da Viabilidade" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="contagemCorrigida" v-model="product.contagemCorrigida" readonly placeholder="Contagem Corrigida" />
+                </div>
+                <button class="btn btn-positive" id="save" @click="productStoreOrUpdate">Salvar</button>
                 <button type="button" class="btn btn-negative" @click="openModal=false">Cancelar</button>
             </form>
         </div>
