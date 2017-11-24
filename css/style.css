@@ -19,3 +19,14 @@
     margin-top: 10%;
     background: #fff;
 }
+
+#login img {
+    margin-left: 0
+}
+
+#login .wrap {
+    max-width: 40%;
+    min-height: 30%;
+    margin-left: 30%;
+    background: #fff;
+}

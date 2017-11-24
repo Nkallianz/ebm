@@ -1,27 +1,27 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "electron": "~1.7.8"
-  },
-  "dependencies": {
-    "lokijs": "^1.5.1",
-    "read-file-utf8": "^1.1.2",
-    "vue": "^1.0.28"
-  }
+    "name": "ebm",
+    "version": "1.0.0",
+    "description": "Gerenciador de estoque",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "repository": "https://github.com/Nkallianz/ebm",
+    "keywords": [
+        "Electron",
+        "quick",
+        "start",
+        "tutorial",
+        "demo"
+    ],
+    "author": "GitHub",
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "electron": "~1.7.8"
+    },
+    "dependencies": {
+        "lokijs": "^1.5.1",
+        "read-file-utf8": "^1.1.2",
+        "vue": "^1.0.28"
+    }
 }
