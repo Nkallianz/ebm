@@ -14,7 +14,8 @@
 <body>
     <div class="window">
         <header class="toolbar toolbar-header">
-            <a href="#"><span class="icon icon-cancel-circled pull-right"></span></a>
+            <a href="#" onclick="remote.getCurrentWindow().close()"><span class="icon icon-cancel-circled  closeButton" ></span></a>
+            <a href="#" onclick="remote.getCurrentWindow().minimize()"><span class="icon icon-minus-circled  minimizeButton" ></span></a>
         </header>
         <div class="window-content" id="login">
             <div class="wrap">
@@ -43,5 +44,10 @@
         </footer>
     </div>
 </body>
+<script>
+    const {
+        remote
+    } = require('electron')
+</script>
 
 </html>

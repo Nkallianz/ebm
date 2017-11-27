@@ -6,8 +6,8 @@
     <title>Easy Business Manager</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/photon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/photon.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Electron Javascript -->
     <!--<script src="app.js" charset="utf-8"></script>-->
@@ -48,11 +48,17 @@
                 <button class="btn btn-default pull-right" title="Imprimir Estoque">
                   <span class="icon icon-print"></span>
                 </button>
+
+                <div class="btn-group pull-left">
+                    <a href="#" onclick="remote.getCurrentWindow().close()"><span class="icon icon-cancel-circled  closeButton" ></span></a>
+                    <a href="#" onclick="remote.getCurrentWindow().minimize()"><span class="icon icon-minus-circled  minimizeButton" ></span></a>
+
+                </div>
             </div>
         </header>
-        <div class="window-content" id="App">
-            <div class="pane-group">
-                <div class="pane-sm sidebar">
+        <div class="window-content " id="App ">
+            <div class="pane-group ">
+                <div class="pane-sm sidebar ">
                     <h3>Histórico</h3>
                     <p>
                         Em:24/11 <br /> Quantidade: 10 <br />Lote de Receita:1000
@@ -66,22 +72,22 @@
 
 
                 </div>
-                <div class="pane">
-                    <div class="tab-group">
-                        <div class="tab-item">
-                            <span class="icon icon-cancel icon-close-tab"></span> Aba 1
+                <div class="pane ">
+                    <div class="tab-group ">
+                        <div class="tab-item ">
+                            <span class="icon icon-cancel icon-close-tab "></span> Aba 1
                         </div>
-                        <div class="tab-item active">
-                            <span class="icon icon-cancel icon-close-tab"></span> Aba 2
+                        <div class="tab-item active ">
+                            <span class="icon icon-cancel icon-close-tab "></span> Aba 2
                         </div>
-                        <div class="tab-item">
-                            <span class="icon icon-cancel icon-close-tab"></span> Aba 3
+                        <div class="tab-item ">
+                            <span class="icon icon-cancel icon-close-tab "></span> Aba 3
                         </div>
-                        <div class="tab-item tab-item-fixed">
-                            <span class="icon icon-plus"></span>
+                        <div class="tab-item tab-item-fixed ">
+                            <span class="icon icon-plus "></span>
                         </div>
                     </div>
-                    <table class="table table-striped">
+                    <table class="table table-striped ">
                         <thead>
                             <tr>
                                 <th>Lote</th>
@@ -96,12 +102,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <th>J1 <span class="icon icon-plus-circled"></span></th>
-                            <tr v-for="produto in produtos">
+                            <th>J1 <span class="icon icon-plus-circled "></span></th>
+                            <tr v-for="produto in produtos ">
 
                                 <td>{{produto.lote}}
-                                    <a href="#" @click="editProduct(produto)">
-                                        <span class="icon icon-pencil"></span>
+                                    <a href="# " @click="editProduct(produto) ">
+                                        <span class="icon icon-pencil "></span>
                                     </a>
                                 </td>
 
@@ -120,48 +126,53 @@
                 </div>
             </div>
         </div>
-        <footer class="toolbar toolbar-footer">
-            <h1 class="title">Desenvolvido por: Mim</h1>
+        <footer class="toolbar toolbar-footer ">
+            <h1 class="title ">Desenvolvido por: Mim</h1>
         </footer>
     </div>
 
-    <div id="modal" v-if="openModal">
-        <div class="wrap">
-            <form id="cadastro-produto" action="" class="pane-body">
-                <h3 v-if="mode=='cadastrar'">Cadastrar Produto</h3>
-                <h3 v-if="mode=='editar'">Editar Produto</h3>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="lote" v-model="product.lote" placeholder="Lote" />
+    <div id="modal " v-if="openModal ">
+        <div class="wrap ">
+            <form id="cadastro-produto " action=" " class="pane-body ">
+                <h3 v-if="mode=='cadastrar' ">Cadastrar Produto</h3>
+                <h3 v-if="mode=='editar' ">Editar Produto</h3>
+                <div class="form-group ">
+                    <input type="text " class="form-control " id="lote " v-model="product.lote " placeholder="Lote " />
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="dataLote" v-model="product.dataLote" placeholder="Data do Lote" />
+                <div class="form-group ">
+                    <input type="text " class="form-control " id="dataLote " v-model="product.dataLote " placeholder="Data do Lote " />
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="quantidade" v-model="product.quantidade" placeholder="Quantidade" />
+                <div class="form-group ">
+                    <input type="text " class="form-control " id="quantidade " v-model="product.quantidade " placeholder="Quantidade " />
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="contagem" v-model="product.contagem" placeholder="Contagem" />
+                <div class="form-group ">
+                    <input type="text " class="form-control " id="contagem " v-model="product.contagem " placeholder="Contagem " />
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="dataContagem" v-model="product.dataContagem" placeholder="Data da Contagem" />
+                <div class="form-group ">
+                    <input type="text " class="form-control " id="dataContagem " v-model="product.dataContagem " placeholder="Data da Contagem " />
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="viabilidade" v-model="product.viabilidade" placeholder="Viabilidade" />
+                <div class="form-group ">
+                    <input type="text " class="form-control " id="viabilidade " v-model="product.viabilidade " placeholder="Viabilidade " />
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="dataViabilidade" v-model="product.dataViabilidade" placeholder="Data da Viabilidade" />
+                <div class="form-group ">
+                    <input type="text " class="form-control " id="dataViabilidade " v-model="product.dataViabilidade " placeholder="Data da Viabilidade " />
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="contagemCorrigida" v-model="product.contagemCorrigida" readonly placeholder="Contagem Corrigida" />
+                <div class="form-group ">
+                    <input type="text " class="form-control " id="contagemCorrigida " v-model="product.contagemCorrigida " readonly placeholder="Contagem Corrigida " />
                 </div>
-                <button class="btn btn-positive" id="save" @click="productStoreOrUpdate">Salvar</button>
-                <button type="button" class="btn btn-negative" @click="openModal=false">Cancelar</button>
+                <button class="btn btn-positive " id="save " @click="productStoreOrUpdate ">Salvar</button>
+                <button type="button " class="btn btn-negative " @click="openModal=false ">Cancelar</button>
             </form>
         </div>
     </div>
 
 </body>
-<script src="brain.js" charset="utf-8"></script>
-<script src="pages/routes.js" charset="utf-8"></script>
+<script src="../brain.js " charset="utf-8 "></script>
+<script src="routes.js " charset="utf-8 "></script>
+<script>
+    const {
+        remote
+    } = require('electron')
+</script>
 
 </html>
