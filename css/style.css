@@ -51,3 +51,22 @@
     margin-top: 15%;
     background: #fff;
 }
+
+.content {
+    margin-left: 30%;
+    max-width: 50%;
+    height: auto;
+    min-width: 50%;
+}
+
+input[type="number"] {
+    width: 70px;
+}
+
+.borderDiv {
+    border: 2px solid gray;
+    border-radius: 4px;
+    min-width: 50%;
+    max-width: 50%;
+    margin-left: 30%
+}

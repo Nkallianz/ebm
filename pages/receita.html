@@ -6,10 +6,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Receitas</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/photon.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <script src="estoque.js" charset="utf-8"></script>
+
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <h1 class="title">Receita</h1>
+
+            <div class="toolbar-actions">
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default" title="Início">
+                       <a href="home" >
+                        <span class="icon icon-home"></span>
+                      </a>
+                      </button>
+                    <button class="btn btn-default" title="Formulação de Receita">
+                            <span class="icon icon-list-add"></span>
+                      </button>
+                    <button class="btn btn-default active" title="Consultar Estoque">
+                            <span class="icon icon-list"></span>
+                      </button>
+                    <button class="btn btn-default" title="Registros">
+                        <span class="icon icon-folder"></span>
+                      </button>
+                    <button class="btn btn-default" title="Baixa de Estoque">
+                        <span class="icon icon-download"></span>
+                      </button>
+                </div>
+
+
+
+                <button class="btn btn-default pull-right" title="Imprimir Receita">
+                      <span class="icon icon-print"></span>
+                    </button>
+
+                <div class="btn-group pull-left">
+                    <a href="#" onclick="remote.getCurrentWindow().close()"><span class="icon icon-cancel-circled  closeButton" ></span></a>
+                    <a href="#" onclick="remote.getCurrentWindow().minimize()"><span class="icon icon-minus-circled  minimizeButton" ></span></a>
+
+                </div>
+            </div>
+        </header>
+        <div class="window-content " id="App ">
+            <div class="pane-group ">
+                <div class="pane-sm sidebar ">
+                    <nav class="nav-group">
+                        <h5 class="nav-group-title">Formulações pré-definidas
+                            <a href="#" class="tab-item-fixed">
+                                <span class="icon icon-plus-circled" style="color:gray"></span>
+                            </a>
+                        </h5>
+
+                        <a class="nav-group-item active">
+                            <span class="icon icon-record" style="color:#fc605b"></span> Formulação 1
+                        </a>
+                        <span class="nav-group-item">
+                                  <span class="icon icon-record" style="color:#fdbc40"></span> Formulação 2
+                        </span>
+                        <span class="nav-group-item">
+                                  <span class="icon icon-record" style="color:#34c84a"></span> Formulação 3
+                        </span>
+                        <span class="nav-group-item">
+                                  <span class="icon icon-record" style="color:#57acf5"></span> Formulação 4
+                        </span>
+                        <span class="nav-group-item">
+                                  <span class="icon icon-record" style="color:#fc605b"></span> Formulação 5
+                        </span>
+                        <span class="nav-group-item">
+                                  <span class="icon icon-record" style="color:#fc605b"></span> Formulação 6
+                        </span>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="pane pane-body">
+                <div class="content">
+                    <h1 class="title">Lote:###
+                        <a href="#">
+                            <span class="icon icon-pencil" style="color:gray;"></span>
+                        </a>
+                    </h1>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="produto">Produto</label>
+                            <input type="text" id="produto" name="produto" placeholder="formulação x" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="quantidade">Quantidade</label>
+                            <input type="text" id="quantidade" name="quantidade" placeholder="ex:100kg" class="form-control">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="cliente">Cliente</label>
+                            <input type="text" name="cliente" id="cliente" placeholder="Steve Gates" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="borderDiv">
+                    <table class="table-striped">
+                        <thead>
+                            <tr>
+                                <th>In Natura <a href="#"><span class="icon icon-plus-circled" style="color:gray"></span></a></th>
+                                <th>Lote</th>
+                                <th>Concentração</th>
+                                <th>%</th>
+                                <th>Cálculo</th>
+                                <th>Peso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>J1 </td>
+                                <td><input class="form-control" type="number" value="1" min="1" max="9999" /></td>
+                                <td>5x10^9</td>
+                                <td>50%</td>
+                                <td>5x10^8</td>
+                                <td>5kg</td>
+                            </tr>
+                            <tr>
+                                <td>J2 </td>
+                                <td><input class="form-control" type="number" value="6" min="1" max="9999" /></td>
+                                <td>5x10^9</td>
+                                <td>50%</td>
+                                <td>5x10^8</td>
+                                <td>5kg</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-top:3%" class="borderDiv">
+                    <table class="table-striped">
+                        <thead>
+                            <tr>
+                                <th>Inerte <a href="#"><span class="icon icon-plus-circled" style="color:gray"></span></a></th>
+
+                                <th>%</th>
+
+                                <th>Peso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Grafite </td>
+
+                                <td>50%</td>
+
+                                <td>5kg</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+        <footer class="toolbar toolbar-footer">
+            <div class="toolbar-actions">
+                <button class="btn btn-default">
+                        Cancel
+                      </button>
+
+                <button class="btn btn-positive pull-right">
+                        <span class="icon icon-floppy" style="color:#fff;"></span>Salvar
+                      </button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="receita.js" charset="utf-8"></script>
+    <script>
+        const {
+            remote
+        } = require('electron')
+    </script>
 </body>
 
 
