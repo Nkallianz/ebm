@@ -22,25 +22,19 @@
                 <img src="images/logo.png" width="147" height="95" />
                 <form action="" id="login" method="post">
                     <div class="form-group">
-
-
                         <input type="text" class="form-control" placeholder="Usuario">
                     </div>
+
                     <div class="form-group">
-
-
                         <input type="password" class="form-control" placeholder="Senha">
-                    </div>
-
-                    <div class="form-actions">
-
-                        <button type="submit" class="btn btn-form btn-positive">Entrar</button>
                     </div>
                 </form>
             </div>
         </div>
         <footer class="toolbar toolbar-footer">
-
+            <div class="toolbar-actions">
+                <button type="submit" onclick="remote.doLogin()" class="btn btn-form btn-positive pull-right">Entrar</button>
+            </div>
         </footer>
     </div>
 </body>

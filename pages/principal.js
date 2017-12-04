@@ -4,7 +4,7 @@ const main = remote.require('./main.js')
 
 function newPage(){
  let btnEstoque =    
-document.getElementById('App').innerHTML = "../principal.html"
+document.getElementById('App').innerHTML = "pages/estoque.html"
 }
 
 

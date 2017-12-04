@@ -17,22 +17,27 @@
     <h1>TItulo</h1>
     <div class="window">
         <header class="toolbar toolbar-header">
-            <h1 class="title">Estoque</h1>
+            <h1 class="title">Consultar Estoque</h1>
 
             <div class="toolbar-actions">
-                <div class="btn-group">
+                <div class="btn-group pull-right">
                     <button class="btn btn-default" title="Início">
-                   <a href="home" >
+                   <a href="../principal.html" >
                     <span class="icon icon-home"></span>
                   </a>
                   </button>
                     <button class="btn btn-default" title="Formulação de Receita">
+                            <a href="receita.html" >
                         <span class="icon icon-list-add"></span>
+                            </a>
                   </button>
                     <button class="btn btn-default active" title="Consultar Estoque">
+                       <a href="#">
                         <span class="icon icon-list"></span>
+                        </a>
                   </button>
                     <button class="btn btn-default" title="Registros">
+                            <a href="registros.html" >
                     <span class="icon icon-folder"></span>
                   </button>
                     <button class="btn btn-default" title="Baixa de Estoque">
@@ -60,6 +65,7 @@
             <div class="pane-group ">
                 <div class="pane-sm sidebar ">
                     <h3>Histórico</h3>
+                    <!--fazer um loop de historicocom quebra de linha ou algo assim -->
                     <p>
                         Em:24/11 <br /> Quantidade: 10 <br />Lote de Receita:1000
 
@@ -73,15 +79,11 @@
 
                 </div>
                 <div class="pane ">
-                    <div class="tab-group ">
-                        <div class="tab-item ">
-                            <span class="icon icon-cancel icon-close-tab "></span> Aba 1
-                        </div>
-                        <div class="tab-item active ">
-                            <span class="icon icon-cancel icon-close-tab "></span> Aba 2
-                        </div>
-                        <div class="tab-item ">
-                            <span class="icon icon-cancel icon-close-tab "></span> Aba 3
+                    <div class="tab-group">
+                        <div v-for="grupo in grupos ">
+                            <div class="tab-item ">
+                                <span class="icon icon-cancel icon-close-tab "></span> {{grupo.nome}}
+                            </div>
                         </div>
                         <div class="tab-item tab-item-fixed ">
                             <span class="icon icon-plus "></span>
@@ -101,9 +103,9 @@
                                 <th>Cont. Corrigida</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <th>J1 <span class="icon icon-plus-circled "></span></th>
-                            <tr v-for="produto in produtos ">
+                        <tbody v-for="produto in produtos ">
+                            <th>{{produto.subgrupo}} <span class="icon icon-plus-circled "></span></th>
+                            <tr>
 
                                 <td>{{produto.lote}}
                                     <a href="# " @click="editProduct(produto) ">
@@ -168,7 +170,8 @@
 
 </body>
 <script src="../brain.js " charset="utf-8 "></script>
-<script src="routes.js " charset="utf-8 "></script>
+
+
 <script>
     const {
         remote

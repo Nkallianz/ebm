@@ -1,7 +1,12 @@
 .pane-body {
     padding: 1rem;
 }
-
+#win-content{
+    width: 100%;
+    
+    background-image: url('../images/main.jpg');
+    
+}
 .closeButton {
     color: gray;
     margin-left: 7px;

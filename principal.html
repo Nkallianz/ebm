@@ -8,58 +8,66 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <script>window.$ = window.jQuery = require('jquery');</script>
     <!-- Electron Javascript -->
     <!--<script src="app.js" charset="utf-8"></script>-->
 </head>
 
 <body>
     <h1>Titulo</h1>
-    <div class="window">
+    <div class="window"> 
         <header class="toolbar toolbar-header">
-            <h1 class="title">Seja Bem Vindo (nome do usuario)</h1>
+           <h1 class="title">EBM</h1>
+                <div class="toolbar-actions">
+                        <div class="btn-group pull-right">
+                            <button class="btn btn-default active" title="Início">
+                           <a href="#" >
+                            <span class="icon icon-home"></span>
+                          </a>
+                          </button>
+                            <button class="btn btn-default" title="Formulação de Receita">
+                            <a href="pages/receita.html" >
+                                <span class="icon icon-list-add"></span>
+                            </a>
+                          </button>
+                            <button class="btn btn-default" title="Consultar Estoque">
+                               <a href="pages/estoque.html">
+                                <span class="icon icon-list"></span>
+                                </a>
+                          </button>
+                            <button class="btn btn-default" title="Registros">
+                                    <a href="pages/registros.html" >
+                            <span class="icon icon-folder"></span>
+                          </button>
+                            <button class="btn btn-default" title="Baixa de Estoque">
+                            <span class="icon icon-download"></span>
+                          </button>
+                        </div>
 
-            <div class="toolbar-actions">
-                <div class="btn-group">
-                    <button class="btn btn-default" title="Início">
-                   <a href="home" >
-                    <span class="icon icon-home"></span>
-                  </a>
-                  </button>
-                    <button class="btn btn-default" title="Formulação de Receita">
-                        <span class="icon icon-list-add"></span>
-                  </button>
-                    <button class="btn btn-default" onclick="remote.abrirEstoque()" title="Consultar Estoque">
-                        <span class="icon icon-list"></span>
-                  </button>
-                    <button class="btn btn-default" title="Registros">
-                    <span class="icon icon-folder"></span>
-                  </button>
-                    <button class="btn btn-default" title="Baixa de Estoque">
-                    <span class="icon icon-download"></span>
-                  </button>
+                <div class="btn-group pull-left">
+                    <a href="#" onclick="remote.getCurrentWindow().close()"><span class="icon icon-cancel-circled  closeButton" ></span></a>
+                    <a href="#" onclick="remote.getCurrentWindow().minimize()"><span class="icon icon-minus-circled  minimizeButton" ></span></a>
+
                 </div>
-
-
 
             </div>
         </header>
-        <div class="window-content" id="App">
-            <div class="pane-body">
-                <img src="images/logo.png" width="147" height="95" />
+        <div class="window-content" id="win-content">
+            <div class="pane-body"   id="App">
+             
             </div>
         </div>
-
+        <footer class="toolbar toolbar-footer">
+            <b>Por: OxsiS 2017</b>
+            <b class="pull-right">v1.0</b>
+        </footer>
 
 
 
 </body>
+
 <script src="brain.js" charset="utf-8"></script>
-<script src="controller.js" charset="utf-8"></script>
-<script src="pages/routes.js" charset="utf-8"></script>
-<script>
-    window.$ = window.jQuery = require('jquery')
-</script>
+<script src="pages/principal.js" charset="utf-8 "></script>
 
 
 </html>

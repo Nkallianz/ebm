@@ -4,7 +4,13 @@
     "description": "Gerenciador de estoque",
     "main": "main.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+        "win32": "electron-packager . EBM --platform=win32 --arch=ia32",
+        "win64": "electron-packager . EBM --platform=win32 --arch=x64",
+        "linux32": "electron-packager . EBM --platform=linux --arch=ia32",
+        "linux64": "electron-packager . EBM --platform=linux --arch=x64",
+        "osx": "electron-packager . EBM --platform=darwin --arch=x64",
+        "build": "electron-packager . --all"
     },
     "repository": "https://github.com/Nkallianz/ebm",
     "keywords": [
@@ -20,9 +26,13 @@
         "electron": "~1.7.8"
     },
     "dependencies": {
+        "electron-packager": "^6.0.2",
+        "electron-prebuilt": "^0.36.12",
         "jquery": "^3.2.1",
         "lokijs": "^1.5.1",
+        "react-tap-event-plugin": "^3.0.2",
         "read-file-utf8": "^1.1.2",
-        "vue": "^1.0.28"
+        "vue": "^1.0.28",
+        "vue-router": "^3.0.1"
     }
 }

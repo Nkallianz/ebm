@@ -6,10 +6,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registros</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/photon.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <h1 class="title">Consulta de Registros</h1>
+
+            <div class="toolbar-actions">
+                    <div class="btn-group pull-right">
+                            <button onclick="location.href = '../principal.html'"  class="btn btn-default" title="Início">
+                           
+                            <span class="icon icon-home"></span>
+                       
+                          </button>
+                            <button onclick="location.href = 'receita.html'"  class="btn btn-default" title="Formulação de Receita">
+                                  
+                                <span class="icon icon-list-add"></span>
+                                   
+                          </button>
+                          
+                            <button onclick="location.href = 'estoque.html'" class="btn btn-default" title="Consultar Estoque">
+                               
+                                <span class="icon icon-list"></span>
+                                
+                          </button>
+                      
+                            <button class= "btn btn-default active"  onclick="location.href = 'receita.html'"  title="Registros">
+                                    
+                            <span class="icon icon-folder"></span>
+                          </button>
+
+                            <button class="btn btn-default" title="Baixa de Estoque">
+                            <span class="icon icon-download"></span>
+                          </button>
+                        </div>
+
+
+
+                <button class="btn btn-default pull-right" title="Imprimir Receita">
+                      <span class="icon icon-print"></span>
+                    </button>
+
+                <div class="btn-group pull-left">
+                    <a href="#" onclick="remote.getCurrentWindow().close()"><span class="icon icon-cancel-circled  closeButton" ></span></a>
+                    <a href="#" onclick="remote.getCurrentWindow().minimize()"><span class="icon icon-minus-circled  minimizeButton" ></span></a>
+
+                </div>
+            </div>
+        </header>
+        <div class="window-content " id="App ">
+            <div class="pane-group ">
+                <div class="pane-sm sidebar ">
+                    <nav class="nav-group">
+                        <h5 class="nav-group-title">Formulações pré-definidas
+                            <a href="#" class="tab-item-fixed">
+                                <span class="icon icon-plus-circled" style="color:gray"></span>
+                            </a>
+                        </h5>
+                        <div v-for="produto in produtos ">
+                        <a class="nav-group-item active">
+                            <span class="icon icon-record" style="color:#fc605b"></span> Lote {{produto.lote}} - Formulação 1
+                        </a>
+                        </div>
+                        
+                    </nav>
+                </div>
+
+            </div>
+            <div class="pane pane-body">
+                <div class="content">
+                    <h1 class="title">Lote:{{produto.lote}}</h1>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="produto">Produto</label>
+                            {{formulacao}}
+                        </div>
+                        <div class="form-group">
+                            <label for="quantidade">Quantidade</label>
+                            {{quantidade}}
+
+                        </div>
+                        <div class="form-group">
+                            <label for="cliente">Cliente</label>
+                            {{cliente}}
+                        </div>
+                    </form>
+                </div>
+                <div class="borderDiv">
+                    <table class="table-striped">
+                        <thead>
+                            <tr v-for="produto in produtos ">
+                                <th>In Natura</th>
+                                <th>Lote</th>
+                                <th>Concentração</th>
+                                <th>%</th>
+                                <th>Cálculo</th>
+                                <th>Peso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{j1}} </td>
+                                <td>
+                                  {{produto.lote}}
+                                </td>
+                                <td>{{produto.concentracao}}</td>
+                                <td>{{produto.porcentagem}}</td>
+                                <td>{{produto.calculo}}</td>
+                                <td>{{produto.peso}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-top:3%" class="borderDiv">
+                    <table class="table-striped">
+                        <thead>
+                            <tr>
+                                <th>Inerte</th>
+
+                                <th>%</th>
+
+                                <th>Peso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{produto.material}} </td>
+
+                                <td>{{produto.porcentagem}}</td>
+
+                                <td>{{produto.peso}}</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!---Se for admin mostrar opção de editar -->
+        <footer class="toolbar toolbar-footer">
+            <div class="toolbar-actions">
+                    <button class="btn btn-default pull-left">
+                            <span class="icon icon-pencil" style="color:#000;"></span>   Editar
+                          </button>
+
+    
+
+                <button class="btn btn-positive pull-right">
+                        <span class="icon icon-down-circled" style="color:#fff;"></span> Baixa
+                      </button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../brain.js" charset="utf-8"></script>
+    <script>
+        const {
+            remote
+        } = require('electron')
+    </script>
 </body>
+
 
 </html>

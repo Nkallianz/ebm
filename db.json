@@ -1,1 +1,113 @@
-{ "filename": "db.json", "collections": [{ "name": "produtos", "data": [{ "lote": "0001", "dataLote": "11/12", "quantidade": "34,17", "contagem": "1380000000", "dataContagem": "14/11", "viabilidade": "100%", "dataViabilidade": "23/11", "contagemCorrigida": "5x10^9", "meta": { "revision": 3, "created": 1511292102641, "version": 0, "updated": 1511536815505 }, "$loki": 1 }, { "lote": "0001", "dataLote": "11/12", "quantidade": "34,17", "contagem": "1380000000", "dataContagem": "14/11", "viabilidade": "100%", "dataViabilidade": "23/11", "contagemCorrigida": "5x10^9", "meta": { "revision": 3, "created": 1511292102641, "version": 0, "updated": 1511536815505 }, "$loki": 2 }], "idIndex": [1, 2], "binaryIndices": {}, "constraints": null, "uniqueNames": [], "transforms": {}, "objType": "produtos", "dirty": true, "cachedIndex": null, "cachedBinaryIndex": null, "cachedData": null, "adaptiveBinaryIndices": true, "transactional": false, "cloneObjects": false, "cloneMethod": "parse-stringify", "asyncListeners": false, "disableChangesApi": true, "disableDeltaChangesApi": true, "autoupdate": false, "serializableIndices": true, "ttl": null, "maxId": 6, "DynamicViews": [], "events": { "insert": [null], "update": [null], "pre-insert": [], "pre-update": [], "close": [], "flushbuffer": [], "error": [], "delete": [null], "warning": [null] }, "changes": [] }], "databaseVersion": 1.5, "engineVersion": 1.5, "autosave": false, "autosaveInterval": 5000, "autosaveHandle": null, "throttledSaves": true, "options": { "serializationMethod": "normal", "destructureDelimiter": "$<\n" }, "persistenceMethod": "fs", "persistenceAdapter": null, "verbose": false, "events": { "init": [null], "loaded": [], "flushChanges": [], "close": [], "changes": [], "warning": [] }, "ENV": "NODEJS" }
+{
+    "filename": "db.json",
+    "collections": [
+        {
+            "name": "produtos",
+            "data": [
+                {
+                    "lote": "0001",
+                    "dataLote": "11/12",
+                    "quantidade": "34,17",
+                    "contagem": "1380000000",
+                    "dataContagem": "14/11",
+                    "viabilidade": "100%",
+                    "dataViabilidade": "23/11",
+                    "contagemCorrigida": "5x10^9",
+                    "meta": {
+                        "revision": 3,
+                        "created": 1511292102641,
+                        "version": 0,
+                        "updated": 1511536815505
+                    },
+                    "$loki": 1
+                },
+                {
+                    "lote": "0001",
+                    "dataLote": "11/12",
+                    "quantidade": "34,17",
+                    "contagem": "1380000000",
+                    "dataContagem": "14/11",
+                    "viabilidade": "100%",
+                    "dataViabilidade": "23/11",
+                    "contagemCorrigida": "5x10^9",
+                    "meta": {
+                        "revision": 3,
+                        "created": 1511292102641,
+                        "version": 0,
+                        "updated": 1511536815505
+                    },
+                    "$loki": 2
+                }
+            ],
+            "idIndex": [
+                1,
+                2
+            ],
+            "binaryIndices": {},
+            "constraints": null,
+            "uniqueNames": [],
+            "transforms": {},
+            "objType": "produtos",
+            "dirty": true,
+            "cachedIndex": null,
+            "cachedBinaryIndex": null,
+            "cachedData": null,
+            "adaptiveBinaryIndices": true,
+            "transactional": false,
+            "cloneObjects": false,
+            "cloneMethod": "parse-stringify",
+            "asyncListeners": false,
+            "disableChangesApi": true,
+            "disableDeltaChangesApi": true,
+            "autoupdate": false,
+            "serializableIndices": true,
+            "ttl": null,
+            "maxId": 6,
+            "DynamicViews": [],
+            "events": {
+                "insert": [
+                    null
+                ],
+                "update": [
+                    null
+                ],
+                "pre-insert": [],
+                "pre-update": [],
+                "close": [],
+                "flushbuffer": [],
+                "error": [],
+                "delete": [
+                    null
+                ],
+                "warning": [
+                    null
+                ]
+            },
+            "changes": []
+        }
+    ],
+    "databaseVersion": 1.5,
+    "engineVersion": 1.5,
+    "autosave": false,
+    "autosaveInterval": 5000,
+    "autosaveHandle": null,
+    "throttledSaves": true,
+    "options": {
+        "serializationMethod": "normal",
+        "destructureDelimiter": "$<\n"
+    },
+    "persistenceMethod": "fs",
+    "persistenceAdapter": null,
+    "verbose": false,
+    "events": {
+        "init": [
+            null
+        ],
+        "loaded": [],
+        "flushChanges": [],
+        "close": [],
+        "changes": [],
+        "warning": []
+    },
+    "ENV": "NODEJS"
+}

@@ -20,18 +20,23 @@
 
             <div class="toolbar-actions">
                 <div class="btn-group pull-right">
-                    <button class="btn btn-default" title="Início">
-                       <a href="home" >
+                    <button class="btn btn-default" onclick="location.href = '../principal.html'" title="Início">
+                     
                         <span class="icon icon-home"></span>
-                      </a>
+                      
                       </button>
-                    <button class="btn btn-default" title="Formulação de Receita">
+
+
+                    <button class="btn btn-default active" onclick="location.href = '#'" title="Formulação de Receita">
+                            
                             <span class="icon icon-list-add"></span>
+                           
                       </button>
-                    <button class="btn btn-default active" title="Consultar Estoque">
+                    <button class="btn btn-default" onclick="location.href = 'estoque.html'"  title="Consultar Estoque">
+                           
                             <span class="icon icon-list"></span>
                       </button>
-                    <button class="btn btn-default" title="Registros">
+                    <button class="btn btn-default" onclick="location.href = 'registros.html'"  title="Registros">
                         <span class="icon icon-folder"></span>
                       </button>
                     <button class="btn btn-default" title="Baixa de Estoque">
@@ -122,7 +127,16 @@
                         <tbody>
                             <tr>
                                 <td>J1 </td>
-                                <td><input class="form-control" type="number" value="1" min="1" max="9999" /></td>
+                                <td>
+                                    <input class="form-control" type="number" value="1" min="1" max="9999" />
+                                    <datalist id="browsers">
+                                            <option value="0001">
+                                            <option value="0002">
+                                            <option value="0003">
+                                            <option value="0004">
+                                            <option value="0005">
+                                          </datalist>
+                                </td>
                                 <td>5x10^9</td>
                                 <td>50%</td>
                                 <td>5x10^8</td>
