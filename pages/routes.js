@@ -1,22 +1,56 @@
-const NotFound = { template: "Não sei como você chegou aqui, mas não tem nada aqui pra ver!" }
+window.navigation = window.navigation || {},
+function(n) {
+ navigation.menu = {
+ constants: {
+ sectionTemplate: '.window',
+ contentContainer: '#App',
+ startSectionMenuItem: '#welcome-menu',
+ startSection: '#home'
+ },
 
-const Routes = {
-    "../index.html": home,
-    "/estoque": Estoque,
-    "/about": SobreNos,
-    "/help": Ajuda
-}
+ importSectionsToDOM: function() {
+ const links = document.querySelectorAll('link[rel="import"]')
+ Array.prototype.forEach.call(links, function (link) {
+ let template = link.import.querySelector(navigation.menu.constants.sectionTemplate)
+ let clone = document.importNode(template.content, true)
+ document.querySelector(navigation.menu.constants.contentContainer).appendChild(clone)
+ })
+ },
 
-new Vue({
-    el: "#App",
-    data: {
-        currentRoute: window.location.pathname
+ setMenuOnClickEvent: function () {
+ document.body.addEventListener('click', function (event) {
+ if (event.target.dataset.section) {
+ navigation.menu.hideAllSections()
+ navigation.menu.showSection(event)
+ }
+ })
+ },
 
-    },
-    computed: {
-        ViewComponent() {
-            return Routes[this.currentRoute] || NotFound
-        }
-    },
-    render(h) { return h(this.ViewComponent) }
-})
+ showSection: function(event) {
+ const sectionId = event.target.dataset.section
+ $('#' + sectionId).show()
+ $('#' + sectionId + ' section').show()
+ },
+
+ showStartSection: function() {
+ $(this.constants.startSectionMenuItem).click()
+ $(this.constants.startSection).show()
+ $(this.constants.startSection + ' section').show()
+ },
+
+ hideAllSections: function() {
+ $(this.constants.contentContainer + ' section').hide()
+ },
+
+ init: function() {
+ this.importSectionsToDOM()
+ this.setMenuOnClickEvent()
+ this.showStartSection()
+ }
+ };
+
+ n(function() {
+ navigation.menu.init()
+ })
+
+}(jQuery);

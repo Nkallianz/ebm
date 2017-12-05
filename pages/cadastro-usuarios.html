@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+    <title>Form Usuarios</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/photon.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Electron Javascript -->
+    <!--<script src="app.js" charset="utf-8"></script>-->
+  </head>
+
+  <body>
+      <div class="window">
+          <header class="toolbar toolbar-header">
+              <h1 class="title">Cadastrar Usuários</h1>
+            
+            <div class="toolbar-actions">
+                  <div class="btn-group pull-right">
+                      <button class="btn btn-default" onclick="location.href = '../principal.html'" title="Início">
+                       
+                          <span class="icon icon-home"></span>
+                        
+                        </button>
+  
+  
+                      <button class="btn btn-default" onclick="location.href = '#'" title="Formulação de Receita">
+                              
+                              <span class="icon icon-list-add"></span>
+                             
+                        </button>
+                      <button class="btn btn-default" onclick="location.href = 'estoque.html'"  title="Consultar Estoque">
+                             
+                              <span class="icon icon-list"></span>
+                        </button>
+                      <button class="btn btn-default" onclick="location.href = 'registros.html'"  title="Registros">
+                          <span class="icon icon-folder"></span>
+                        </button>
+                      <button class="btn btn-default" title="Baixa de Estoque">
+                          <span class="icon icon-download"></span>
+                        </button>
+                        <button class="btn btn-default active" title="Cadastrar Usuários do Sistema">
+                            <span class="icon icon-user"></span>
+                          </button>
+                  </div>
+
+                  <div class="btn-group pull-left">
+                      <a href="#" onclick="remote.getCurrentWindow().close()"><span class="icon icon-cancel-circled  closeButton" ></span></a>
+                      <a href="#" onclick="remote.getCurrentWindow().minimize()"><span class="icon icon-minus-circled  minimizeButton" ></span></a>
+  
+                  </div>
+            </header>
+          <div class="window-content">
+            <div class="pane-group">
+              <div class="pane-sm sidebar"> <nav class="nav-group">
+                  <h5 class="nav-group-title">Relação de Usuários
+                   
+                  </h5>
+
+                  <a class="nav-group-item active">
+                      <span class="icon icon-record" style="color:#fc605b"></span> (Offline) Fulano 
+                  </a> 
+                  <span class="nav-group-item">
+                            <span class="icon icon-record" style="color:#34c84a"></span>(Online) Cicrano
+                  </span>
+                  <span class="nav-group-item">
+                      <span class="icon icon-record" style="color:#34c84a"></span>(Online) Cicrano 2
+            </span>
+                  <span class="nav-group-item">
+                            <span class="icon icon-record" style="color:#fc605b"></span>(Offline) Fulano 2
+                  </span>
+                  <span class="nav-group-item">
+                            <span class="icon icon-record" style="color:#fc605b"></span>(Offline) Fulano 3
+                  </span>
+              </nav>
+                </div>
+              <div class="pane">
+                <form id="cadastro-cliente" action="" class="pane-body">
+                <h3>Cadastro de Usuarios</h3>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name" placeholder="Nome">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="E-Mail">
+                </div>
+                  <div class="form-group">
+                      <input type="password" class="form-control" id="password"  placeholder="Senha">
+                  </div>
+                  <div class="form-group">
+                      <input type="password" class="form-control" id="passwordConf"  placeholder="Confirme a Senha">
+                  </div>
+                
+              </form>
+            </div>
+            </div>
+          </div>
+          <footer class="toolbar toolbar-footer">
+              <div class="toolbar-actions">
+                  <button class="btn btn-default">
+                          Cancel
+                        </button>
+  
+                  <button class="btn btn-positive pull-right">
+                          <span class="icon icon-floppy" style="color:#fff;"></span>Salvar
+                        </button>
+              </div>
+          </footer>
+        </div>
+
+    <script>
+        // You can also require other files to run in this process
+        require('./renderer.js')
+      </script>
+  </body>
+</html>

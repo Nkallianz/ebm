@@ -8,41 +8,55 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.css">
     <link rel="stylesheet" href="css/style.css">
-    <script>window.$ = window.jQuery = require('jquery');</script>
+    <link rel="import" href="pages/estoque.html" />
+    <link rel="import" href="pages/receita.html" />
+    <link rel="import" href="pages/registros.html" />
+    <link rel="import" href="pages/usuarios.html" />
+    <!--<link rel="import" href="pages/"/>-->
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
     <!-- Electron Javascript -->
     <!--<script src="app.js" charset="utf-8"></script>-->
 </head>
 
 <body>
     <h1>Titulo</h1>
-    <div class="window"> 
+    <div class="window">
         <header class="toolbar toolbar-header">
-           <h1 class="title">EBM</h1>
-                <div class="toolbar-actions">
-                        <div class="btn-group pull-right">
-                            <button class="btn btn-default active" title="Início">
-                           <a href="#" >
-                            <span class="icon icon-home"></span>
-                          </a>
-                          </button>
-                            <button class="btn btn-default" title="Formulação de Receita">
-                            <a href="pages/receita.html" >
-                                <span class="icon icon-list-add"></span>
-                            </a>
-                          </button>
-                            <button class="btn btn-default" title="Consultar Estoque">
-                               <a href="pages/estoque.html">
-                                <span class="icon icon-list"></span>
-                                </a>
-                          </button>
-                            <button class="btn btn-default" title="Registros">
-                                    <a href="pages/registros.html" >
-                            <span class="icon icon-folder"></span>
-                          </button>
-                            <button class="btn btn-default" title="Baixa de Estoque">
-                            <span class="icon icon-download"></span>
-                          </button>
-                        </div>
+            <h1 class="title">EBM</h1>
+            <div class="toolbar-actions">
+                <div class="btn-group pull-right">
+
+                    <button class="btn btn-default active" title="Início">      
+                        <span class="icon icon-home"></span>
+                        </button>
+
+                    <button onclick="location.href = 'pages/receita.html'" class="btn btn-default" title="Formulação de Receita">
+                            
+                            <span class="icon icon-list-add"></span>
+                                
+                    </button>
+
+                    <button  class="btn btn-default"  onclick="location.href = 'pages/estoque.html'" title="Consultar Estoque">
+                
+                    <span class="icon icon-list"></span>
+                    
+                    </button>
+
+                    <button onclick="location.href = 'pages/registros.html'" class="btn btn-default" title="Registros">
+                                
+                        <span class="icon icon-folder"></span>
+                        </button>
+
+                    <button class="btn btn-default" title="Baixa de Estoque">
+                        <span class="icon icon-download"></span>
+                        </button>
+                    <!--So mostra se for autorizado-->
+                        <button class="btn btn-default" onclick="location.href = 'pages/cadastro-usuarios.html'" title="Cadastrar Usuários do Sistema">
+                                <span class="icon icon-user"></span>
+                              </button>
+                </div>
 
                 <div class="btn-group pull-left">
                     <a href="#" onclick="remote.getCurrentWindow().close()"><span class="icon icon-cancel-circled  closeButton" ></span></a>
@@ -52,9 +66,12 @@
 
             </div>
         </header>
+
+        <!--- END HEADER-->
+
         <div class="window-content" id="win-content">
-            <div class="pane-body"   id="App">
-             
+            <div class="pane-body" id="App">
+
             </div>
         </div>
         <footer class="toolbar toolbar-footer">
@@ -68,6 +85,9 @@
 
 <script src="brain.js" charset="utf-8"></script>
 <script src="pages/principal.js" charset="utf-8 "></script>
+<script>
+    require('pages/routes.js');
+</script>
 
 
 </html>
