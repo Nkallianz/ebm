@@ -83,103 +83,121 @@
 
 
                 </div>
-                <div class="pane ">
-                    <div class="tab-group">
-                        <div v-for="grupo in grupos ">
-                            <div class="tab-item ">
-                                <span class="icon icon-cancel icon-close-tab "></span> {{grupo.nome}}
-                            </div>
+                <div class="pane pane-body">
+                <div class="content">
+                    <h1 class="title">Lote:###
+                        <a href="#">
+                            <span class="icon icon-pencil" style="color:gray;"></span>
+                        </a>
+                    </h1>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="produto">Produto</label>
+                            <input type="text" id="produto" name="produto" placeholder="formulação x" class="form-control">
                         </div>
-                        <div class="tab-item tab-item-fixed ">
-                            <span class="icon icon-plus "></span>
+                        <div class="form-group">
+                            <label for="quantidade">Quantidade</label>
+                            <input type="text" id="quantidade" name="quantidade" placeholder="ex:100kg" class="form-control">
+
                         </div>
-                    </div>
-                    <h5>{{produto.subgrupo}} <span class="icon icon-plus-circled "></span></h5>
-                    <table class="table table-striped ">
+                        <div class="form-group">
+                            <label for="cliente">Cliente</label>
+                            <input type="text" name="cliente" id="cliente" placeholder="Steve Gates" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="borderDiv">
+                    <table class="table-striped">
                         <thead>
                             <tr>
+                                <th>In Natura <a href="#"><span class="icon icon-plus-circled" style="color:gray"></span></a></th>
                                 <th>Lote</th>
-
-                                <th>Data</th>
-                                <th>Quantidade</th>
-                                <th>Contagem</th>
-                                <th>Data</th>
-                                <th>Viabilidade</th>
-                                <th>Data</th>
-                                <th>Cont. Corrigida</th>
+                                <th>Concentração</th>
+                                <th>%</th>
+                                <th>Cálculo</th>
+                                <th>Peso</th>
                             </tr>
                         </thead>
-                        <tbody v-for="produto in produtos ">
-                           
+                        <tbody>
                             <tr>
-
-                                <td>{{produto.lote}}
-                                   
+                                <td>J1 </td>
+                                <td>
+                                    <input class="form-control" type="number" value="1" min="1" max="9999" />
+                                    <datalist id="browsers">
+                                            <option value="0001">
+                                            <option value="0002">
+                                            <option value="0003">
+                                            <option value="0004">
+                                            <option value="0005">
+                                          </datalist>
                                 </td>
-
-                                <td>{{produto.dataLote}}</td>
-                                <td>{{produto.quantidade}}</td>
-                                <td>{{produto.contagem}}</td>
-                                <td>{{produto.dataContagem}}</td>
-                                <td>{{produto.viabilidade}}</td>
-                                <td>{{produto.dataViabilidade}}</td>
-                                <td>{{produto.contagemCorrigida}}</td>
-
-
+                                <td>5x10^9</td>
+                                <td>50%</td>
+                                <td>5x10^8</td>
+                                <td>5kg</td>
                             </tr>
+                            <tr>
+                                <td>J2 </td>
+                                <td><input class="form-control" type="number" value="6" min="1" max="9999" /></td>
+                                <td>5x10^9</td>
+                                <td>50%</td>
+                                <td>5x10^8</td>
+                                <td>5kg</td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
+                <div style="margin-top:3%" class="borderDiv">
+                    <table class="table-striped">
+                        <thead>
+                            <tr>
+                                <th>Inerte <a href="#"><span class="icon icon-plus-circled" style="color:gray"></span></a></th>
+
+                                <th>%</th>
+
+                                <th>Peso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Grafite </td>
+
+                                <td>50%</td>
+
+                                <td>5kg</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
             </div>
+
         </div>
-        <footer class="toolbar toolbar-footer ">
-            <h1 class="title ">Desenvolvido por: Mim</h1>
+        <footer class="toolbar toolbar-footer">
+            <div class="toolbar-actions">
+                <button class="btn btn-default">
+                        Cancel
+                      </button>
+
+                <button class="btn btn-positive pull-right">
+                        <span class="icon icon-floppy" style="color:#fff;"></span>Salvar
+                      </button>
+            </div>
         </footer>
+
     </div>
 
-    <div id="modal " v-if="openModal ">
-        <div class="wrap ">
-            <form id="cadastro-produto " action=" " class="pane-body ">
-                <h3 v-if="mode=='cadastrar' ">Cadastrar Produto</h3>
-                <h3 v-if="mode=='editar' ">Editar Produto</h3>
-                <div class="form-group ">
-                    <input type="text " class="form-control " id="lote " v-model="product.lote " placeholder="Lote " />
-                </div>
-                <div class="form-group ">
-                    <input type="text " class="form-control " id="dataLote " v-model="product.dataLote " placeholder="Data do Lote " />
-                </div>
-                <div class="form-group ">
-                    <input type="text " class="form-control " id="quantidade " v-model="product.quantidade " placeholder="Quantidade " />
-                </div>
-                <div class="form-group ">
-                    <input type="text " class="form-control " id="contagem " v-model="product.contagem " placeholder="Contagem " />
-                </div>
-                <div class="form-group ">
-                    <input type="text " class="form-control " id="dataContagem " v-model="product.dataContagem " placeholder="Data da Contagem " />
-                </div>
-                <div class="form-group ">
-                    <input type="text " class="form-control " id="viabilidade " v-model="product.viabilidade " placeholder="Viabilidade " />
-                </div>
-                <div class="form-group ">
-                    <input type="text " class="form-control " id="dataViabilidade " v-model="product.dataViabilidade " placeholder="Data da Viabilidade " />
-                </div>
-                <div class="form-group ">
-                    <input type="text " class="form-control " id="contagemCorrigida " v-model="product.contagemCorrigida " readonly placeholder="Contagem Corrigida " />
-                </div>
-                <button class="btn btn-positive " id="save " @click="productStoreOrUpdate ">Salvar</button>
-                <button type="button " class="btn btn-negative " @click="openModal=false ">Cancelar</button>
-            </form>
-        </div>
-    </div>
-
+    <script src="receita.js" charset="utf-8"></script>
+    <script>
+        const {
+            remote
+        } = require('electron')
+    </script>
 </body>
-<script src="../brain.js " charset="utf-8 "></script>
 
-
-<script>
-    const {
-        remote
-    } = require('electron')
-</script>
 
 </html>

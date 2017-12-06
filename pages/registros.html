@@ -1,187 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registros</title>
+    <meta charset="utf-8" />
+    <title>Form Registros</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/photon.css">
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Electron Javascript -->
+    <!--<script src="app.js" charset="utf-8"></script>-->
 </head>
 
 <body>
-
     <div class="window">
         <header class="toolbar toolbar-header">
-            <h1 class="title">Consulta de Registros</h1>
+            <h1 class="title">Lista de Registros</h1>
 
             <div class="toolbar-actions">
-                    <div class="btn-group pull-right">
-                            <button onclick="location.href = '../principal.html'"  class="btn btn-default" title="Início">
-                           
-                            <span class="icon icon-home"></span>
-                       
-                          </button>
-                            <button onclick="location.href = 'receita.html'"  class="btn btn-default" title="Formulação de Receita">
-                                  
-                                <span class="icon icon-list-add"></span>
-                                   
-                          </button>
-                          
-                            <button onclick="location.href = 'estoque.html'" class="btn btn-default" title="Consultar Estoque">
-                               
-                                <span class="icon icon-list"></span>
-                                
-                          </button>
-                      
-                            <button class= "btn btn-default active"  onclick="location.href = 'receita.html'"  title="Registros">
-                                    
-                            <span class="icon icon-folder"></span>
-                          </button>
-
-                            <button class="btn btn-default" title="Baixa de Estoque">
-                            <span class="icon icon-download"></span>
-                          </button>
-                          <!--So mostra se for autorizado-->
-<button class="btn btn-default" onclick="location.href = 'cadastro-usuarios.html'" title="Cadastrar Usuários do Sistema">
-        <span class="icon icon-user"></span>
-      </button>
-                        </div>
-
-
-
-                <button class="btn btn-default pull-right" title="Imprimir Receita">
-                      <span class="icon icon-print"></span>
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default" onclick="location.href = '../principal.html'" title="Início"> 
+                        <span class="icon icon-home"></span>
                     </button>
+
+                    <button class="btn btn-default active" onclick="location.href = '#'" title="Formulação de Receita">
+                        <span class="icon icon-list-add"></span>                            
+                    </button>
+
+                    <button class="btn btn-default" onclick="location.href = 'estoque.html'" title="Consultar Estoque">      
+                        <span class="icon icon-list"></span>
+                    </button>
+
+                    <button class="btn btn-default" onclick="location.href = 'registros.html'" title="Registros">
+                        <span class="icon icon-folder"></span>
+                    </button>
+
+                    <button class="btn btn-default" onclick="location.href = 'cadastro-usuarios.html'" title="Cadastrar Usuários do Sistema">
+                        <span class="icon icon-user"></span>
+                    </button>
+                </div>
 
                 <div class="btn-group pull-left">
                     <a href="#" onclick="remote.getCurrentWindow().close()"><span class="icon icon-cancel-circled  closeButton" ></span></a>
                     <a href="#" onclick="remote.getCurrentWindow().minimize()"><span class="icon icon-minus-circled  minimizeButton" ></span></a>
-
                 </div>
-            </div>
         </header>
-        <div class="window-content " id="App ">
-            <div class="pane-group ">
-                <div class="pane-sm sidebar ">
+        <div class="window-content" id="App">
+            <div class="pane-group">
+                <div class="pane-sm sidebar">
                     <nav class="nav-group">
-                        <h5 class="nav-group-title">Formulações pré-definidas
-                            <a href="#" class="tab-item-fixed">
-                                <span class="icon icon-plus-circled" style="color:gray"></span>
-                            </a>
-                        </h5>
-                        <div v-for="produto in produtos ">
-                        <a class="nav-group-item active">
-                            <span class="icon icon-record" style="color:#fc605b"></span> Lote {{produto.lote}} - Formulação 1
+                        <ul class="list-group">
+                            <li class="list-group-header">
+                                <input class="form-control" type="text" placeholder="Buscar Lote" index="1">
+                            </li>
+                        </ul>
+                        <h5 class="nav-group-title">Formulações</h5>
+
+                        <!-- Deve adicionar Active na class ao selecionar -->
+                        <a class="nav-group-item">
+                            <span class="icon icon-record" style="color:{color}"></span>{{formulacao}}
                         </a>
-                        </div>
-                        
+
+
                     </nav>
                 </div>
 
+                <div class="pane pane-body">
+                    <div class="content">
+                        <h1 class="title">Lote:###
+                            <a href="#">
+                                <span class="icon icon-pencil" style="color:gray;"></span>
+                            </a>
+                        </h1>
+                        <form action="">
+                            <div class="form-group">
+                                <label for="produto">Produto</label>
+                                <input type="text" id="produto" name="produto" readonly placeholder="formulação x" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="quantidade">Quantidade</label>
+                                <input type="text" id="quantidade" name="quantidade" readonly placeholder="ex:100kg" class="form-control">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="cliente">Cliente</label>
+                                <input type="text" name="cliente" id="cliente" readonly placeholder="Steve Gates" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="borderDiv">
+                        <table class="table-striped">
+                            <thead>
+                                <tr>
+                                    <th>In Natura </th>
+                                    <th>Lote</th>
+                                    <th>Concentração</th>
+                                    <th>%</th>
+                                    <th>Cálculo</th>
+                                    <th>Peso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>J1 </td>
+                                    <td>
+                                        <input class="form-control" type="number "  readonly value="1" min="1" max="9999" />
+                                        <datalist id="browsers">
+                                                    <option value="0001">
+                                                    <option value="0002">
+                                                    <option value="0003">
+                                                    <option value="0004">
+                                                    <option value="0005">
+                                                  </datalist>
+                                    </td>
+                                    <td>5x10^9</td>
+                                    <td>50%</td>
+                                    <td>5x10^8</td>
+                                    <td>5kg</td>
+                                </tr>
+                                <tr>
+                                    <td>J2 </td>
+                                    <td><input class="form-control" readonly type="number" value="6" min="1" max="9999" /></td>
+                                    <td>5x10^9</td>
+                                    <td>50%</td>
+                                    <td>5x10^8</td>
+                                    <td>5kg</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top:3%" class="borderDiv">
+                        <table class="table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Inerte</th>
+
+                                    <th>%</th>
+
+                                    <th>Peso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Grafite </td>
+
+                                    <td>50%</td>
+
+                                    <td>5kg</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="pane pane-body">
-                <div class="content">
-                    <h1 class="title">Lote:{{produto.lote}}</h1>
-                    <form action="">
-                        <div class="form-group">
-                            <label for="produto">Produto</label>
-                            {{formulacao}}
-                        </div>
-                        <div class="form-group">
-                            <label for="quantidade">Quantidade</label>
-                            {{quantidade}}
-
-                        </div>
-                        <div class="form-group">
-                            <label for="cliente">Cliente</label>
-                            {{cliente}}
-                        </div>
-                    </form>
-                </div>
-                <div class="borderDiv">
-                    <table class="table-striped">
-                        <thead>
-                            <tr v-for="produto in produtos ">
-                                <th>In Natura</th>
-                                <th>Lote</th>
-                                <th>Concentração</th>
-                                <th>%</th>
-                                <th>Cálculo</th>
-                                <th>Peso</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{j1}} </td>
-                                <td>
-                                  {{produto.lote}}
-                                </td>
-                                <td>{{produto.concentracao}}</td>
-                                <td>{{produto.porcentagem}}</td>
-                                <td>{{produto.calculo}}</td>
-                                <td>{{produto.peso}}</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div style="margin-top:3%" class="borderDiv">
-                    <table class="table-striped">
-                        <thead>
-                            <tr>
-                                <th>Inerte</th>
-
-                                <th>%</th>
-
-                                <th>Peso</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{produto.material}} </td>
-
-                                <td>{{produto.porcentagem}}</td>
-
-                                <td>{{produto.peso}}</td>
-                            </tr>
-
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-            </div>
-
         </div>
-
-        <!---Se for admin mostrar opção de editar -->
         <footer class="toolbar toolbar-footer">
             <div class="toolbar-actions">
-                    <button class="btn btn-default pull-left">
-                            <span class="icon icon-pencil" style="color:#000;"></span>   Editar
-                          </button>
-
-    
+                <button class="btn btn-default">
+                                Editar
+                              </button>
 
                 <button class="btn btn-positive pull-right">
-                        <span class="icon icon-down-circled" style="color:#fff;"></span> Baixa
-                      </button>
+                                <span class="icon icon-download" style="color:#fff;"></span>&nbsp;Baixa
+                              </button>
             </div>
         </footer>
 
-    </div>
-
-    <script src="../brain.js" charset="utf-8"></script>
-    <script>
-        const {
-            remote
-        } = require('electron')
-    </script>
+        <script>
+            const {
+                remote
+            } = require('electron')
+        </script>
 </body>
 
 
