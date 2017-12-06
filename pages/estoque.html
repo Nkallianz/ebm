@@ -94,6 +94,7 @@
                             <span class="icon icon-plus "></span>
                         </div>
                     </div>
+                    <h5>{{produto.subgrupo}} <span class="icon icon-plus-circled "></span></h5>
                     <table class="table table-striped ">
                         <thead>
                             <tr>
@@ -109,13 +110,11 @@
                             </tr>
                         </thead>
                         <tbody v-for="produto in produtos ">
-                            <th>{{produto.subgrupo}} <span class="icon icon-plus-circled "></span></th>
+                           
                             <tr>
 
                                 <td>{{produto.lote}}
-                                    <a href="# " @click="editProduct(produto) ">
-                                        <span class="icon icon-pencil "></span>
-                                    </a>
+                                   
                                 </td>
 
                                 <td>{{produto.dataLote}}</td>
