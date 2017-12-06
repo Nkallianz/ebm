@@ -28,12 +28,8 @@
     "dependencies": {
         "electron-packager": "^6.0.2",
         "electron-prebuilt": "^0.36.12",
-        "express": "^4.16.2",
-        "express-graphql": "^0.6.11",
-        "graphql": "^0.11.7",
         "jquery": "^3.2.1",
         "lokijs": "^1.5.1",
-        "mongoose": "^4.13.6",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "react-tap-event-plugin": "^3.0.2",
