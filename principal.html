@@ -11,11 +11,9 @@
     <link rel="import" href="pages/estoque.html" />
     <link rel="import" href="pages/receita.html" />
     <link rel="import" href="pages/registros.html" />
-    <link rel="import" href="pages/usuarios.html" />
+    <link rel="import" href="pages/cadastro-usuarios.html" />
     <!--<link rel="import" href="pages/"/>-->
-    <script>
-        window.$ = window.jQuery = require('jquery');
-    </script>
+
     <!-- Electron Javascript -->
     <!--<script src="app.js" charset="utf-8"></script>-->
 </head>
@@ -76,18 +74,39 @@
         </div>
         <footer class="toolbar toolbar-footer">
             <b>Por: OxsiS 2017</b>
-            <b class="pull-right">v1.0</b>
+            <b class="pull-right">v1.0 &alpha;</b>
         </footer>
+        <div class="window" id="modalLogin">
+                
 
+        <div class="window-content wrap" id="login">
+            
+            <div class="wrap">
 
+                  
+                <img src="images/logo.png" width="147" height="95" />
+                <form action="" id="login" method="post">
+                    <div class="form-group">
+                        <input type="text" id="user" class="form-control" placeholder="Usuario">
+                    </div>
 
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control" placeholder="Senha">
+                    </div>
+                </form>
+                
+                    <div class="toolbar-actions">
+                        <button type="submit" id="doLogin"  class="btn btn-form btn-positive pull-right">Entrar</button>
+                    </div>
+              
+            </div>
+            
+        </div>
+       
+    </div>
+</div>
 </body>
 
 <script src="brain.js" charset="utf-8"></script>
-<script src="pages/principal.js" charset="utf-8 "></script>
-<script>
-    require('pages/routes.js');
-</script>
-
 
 </html>

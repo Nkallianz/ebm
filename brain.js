@@ -1,15 +1,15 @@
     let read = require('read-file-utf8');
     let loki = require('lokijs');
-    let router = require('vue-router');
+    //let router = require('vue-router');
     let db = new loki('db.json');
     let data = read(__dirname + '/db.json');
     db.loadJSON(data);
-    window.Vue = require('vue');
+    //window.Vue = require('vue');
     let produtos = db.getCollection('produtos');
     const estoque ={template:'pages/estoque.html'}
     const receita ={template:'pages/receita.html'}
     //console.log(db);
-
+/*
     let routes={
         '/estoque':estoque,
         '/receita':receita
@@ -83,3 +83,15 @@
             }
         }
     })
+*/
+    function doLogin(){
+    const loginBtn = document.getElementById('doLogin');
+    const user = document.getElementById('user');
+    const password = document.getElementById('password');
+
+    loginBtn.addEventListener('click',function(event){
+       
+            modalLogin.style.display="none";
+       
+    })
+    }
