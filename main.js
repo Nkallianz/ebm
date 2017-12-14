@@ -15,19 +15,19 @@ let win
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-            width:2800,
-            height:2600,
+            width:400,
+            height:400,
             resizable: false,
             show: false,
             frame: false,
-            fullscreen:true,
+            fullscreen:false,
             //titleBarStyle: 'hidden' MacOnly
         }),
         //estoqueWindow = new BrowserWindow({ width: 700, height: 700, resizable: false })
 
     // and load the index.html of the app.
     win.loadURL(url.format({
-        pathname: path.join(__dirname, 'principal.html'),
+        pathname: path.join(__dirname, 'login.html'),
         protocol: 'file:',
         slashes: true,
 
