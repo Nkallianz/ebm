@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Perfil</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/photon.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="import" href="pages/estoque.html" />
+    <link rel="import" href="pages/receita.html" />
+    <link rel="import" href="pages/registros.html" />
+    <link rel="import" href="pages/cadastro-usuarios.html" />
+    <!--<link rel="import" href="pages/"/>-->
+
+    <!-- Electron Javascript -->
+    <!--<script src="app.js" charset="utf-8"></script>-->
+</head>
+
+<body>
+    <h1>Titulo</h1>
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <h1 class="title">Perfil de Kauê</h1>
+          
+        </header>
+
+        <!--- END HEADER-->
+
+        <div class="window-content">
+            <div class="pane-group">
+              <div class="pane-sm sidebar">
+                  <div class="profilePictureBox">
+                    <img src="../images/no_avatar.png" alt="picture" title="Essa aqui é a pessoa." class="profilePicture">  
+                  </div>
+
+              </div>
+              <div class="pane pane-body">
+                <h2>Kauê Nascimento</h2>
+                <div class="form-group">
+                    <span class="icon icon-vcard"></span> <span>  Analista de Sistema</span>
+                </div>
+                <div class="form-group">
+                 <span class="icon icon-mail"></span> <span><a href="mailto:kaue@jco.com.br">kaue@jco.com.br</a></span>
+                 </div>
+                 <div class="form-group">
+                        <span class="icon icon-location"></span>  <span> Rua Anibal Alves Barbosa, Centro</span>
+                         </div>
+                                 <div class="form-group">
+                                       <span class="icon icon-phone"></span> <span>(77)3611-6852</span>
+                                 </div>
+                                 <div class="form-group">
+                                        <span class="icon icon-mobile"></span> <span>(77)981-160-633</span>
+                                         </div>
+
+              </div>
+            </div>
+          </div>
+        <footer class="toolbar toolbar-footer">
+           <button onclick="remote.getCurrentWindow().close()" class="btn btn-negative pull-right">Fechar</button>
+        </footer>
+
+       
+    </div>
+</div>
+</body>
+
+<script src="brain.js" charset="utf-8"></script>
+<script>
+            const {
+                remote
+            } = require('electron')
+        </script>
+
+</html>

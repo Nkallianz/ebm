@@ -57,7 +57,7 @@
                             <span class="icon icon-record" style="color:#fc605b"></span> (Offline) Fulano
                         </a>
                         <span class="nav-group-item">
-                            <span class="icon icon-record" style="color:#34c84a"></span>(Online) Cicrano
+                            <span class="icon icon-record" style="color:#34c84a"></span>(Online) <a href="#" onclick="remote.nativeWindowOpen()">Kauê</a>
                         </span>
                         <span class="nav-group-item">
                             <span class="icon icon-record" style="color:#34c84a"></span>(Online) Cicrano 2
@@ -103,7 +103,21 @@
             </div>
         </footer>
         </div>
+        <script>
+                const {
+                    remote
+                } = require('electron')
 
+
+                const profile = new remote.BrowserWindow({
+                    width: 800,
+                    height: 500,
+                    webPreferences: {
+                      nativeWindowOpen: true
+                    }
+                  })
+
+            </script>
 </body>
 
 </html>
