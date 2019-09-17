@@ -28,7 +28,7 @@
     "dependencies": {
         "electron-packager": "^6.0.2",
         "electron-prebuilt": "^0.36.12",
-        "jquery": "^3.2.1",
+        "jquery": "^3.4.0",
         "lokijs": "^1.5.1",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
