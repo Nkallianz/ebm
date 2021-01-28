@@ -23,7 +23,7 @@
     "author": "Kaue Nascimento",
     "license": "",
     "devDependencies": {
-        "electron": "~1.7.8"
+        "electron": "~9.4.0"
     },
     "dependencies": {
         "electron-packager": "^6.0.2",
